@@ -22,7 +22,7 @@ def hel():
    help(cv2)
 
 def Contri():
-   tkinter.messagebox.showinfo("Contributor","\n1.Rekha Kiranmai")
+   tkinter.messagebox.showinfo("Contributor","\n1.Rekha Kiranmai\n2.Sravanthi")
  
 
 menu = Menu(root)
