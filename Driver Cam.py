@@ -41,37 +41,6 @@ subm2.add_command(label="Contributors",command=Contri)
 def exitt():
    exit()
 
-  
-def webdetRec():
-   capture =cv2.VideoCapture(0)
-   face_cascade = cv2.CascadeClassifier('lbpcascade_frontalface.xml')
-   eye_glass = cv2.CascadeClassifier('haarcascade_eye_tree_eyeglasses.xml')
-   
-
-   while True:
-       ret, frame = capture.read()
-       gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-       faces = face_cascade.detectMultiScale(gray)
-    
-
-       for (x,y,w,h) in faces:
-           #detecting face with arectangle over it
-           cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
-           roi_gray = gray[y:y+h, x:x+w]
-           roi_color = frame[y:y+h, x:x+w]
-        
-          
-
-           eye_g = eye_glass.detectMultiScale(roi_gray)
-           for (ex,ey,ew,eh) in eye_g:
-              cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
-       cv2.imshow('frame',frame)
-       #taking user i/p for stopping the loop
-       if cv2.waitKey(1) & 0xff == ord('q'):
-          break
-   capture.release()
-   cv2.destroyAllWindows()
-
    
 def alert():
    mixer.init()
